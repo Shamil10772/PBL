@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Consumer;
 use Illuminate\Http\Request;
 
 class ConsumerController extends Controller
