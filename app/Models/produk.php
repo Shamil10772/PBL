@@ -5,25 +5,21 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class produk extends Model
+class Produk extends Model
 {
-    protected $table = 'produk';
-
     protected $fillable = [
         'nama_produk',
-        'harga',
-        'stok',
-        'id_jenis_kopi',
-        'id_distributor',
+        'deskripsi',
+        'kode_produk',
+        'harga_beli',
+        'satuan_pembelian',
+        'stok_tersedia',
+        'tanggal_pembelian_terakhir',
+        'tanggal_kadaluarsa',
+        'informasi_distributor',
+        'catatan_tambahan'
     ];
 
-    public function jenis_kopi()
-    {
-        return $this->belongsTo(jenis_kopi::class);
-    }
 
-    public function distributor()
-    {
-        return $this->belongsTo(distributor::class);
-    }
+    protected $dates = ['tanggal_pembelian_terakhir', 'tanggal_kadaluarsa'];
 }
